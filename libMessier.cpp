@@ -10,12 +10,10 @@
 // distribution.
 //
 
-
 // Author: Amro Awad (E-mail aawad@sandia.gov)
 //
-#include <sst/core/sst_config.h>
 #include "Messier.h"
+#include <sst/core/sst_config.h>
 
 using namespace SST;
 using namespace SST::MessierComponent;
-

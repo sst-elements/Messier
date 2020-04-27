@@ -1,0 +1,132 @@
+/home/sabbir/sst-elements-org/Messier/Messier.cc:182:53: warning: Potential leak of memory pointed to by 'link_buffer' [clang-analyzer-unix.Malloc]
+        event_link = configureSelfLink(link_buffer, "1ns", new Event::Handler<NVM_DIMM>(DIMM, &NVM_DIMM::handleEvent));
+                                                    ^
+/home/sabbir/sst-elements-org/Messier/Messier.cc:159:30: note: Memory is allocated
+        char* link_buffer = (char*) malloc(sizeof(char) * 256);
+                                    ^
+/home/sabbir/sst-elements-org/Messier/Messier.cc:182:53: note: Potential leak of memory pointed to by 'link_buffer'
+        event_link = configureSelfLink(link_buffer, "1ns", new Event::Handler<NVM_DIMM>(DIMM, &NVM_DIMM::handleEvent));
+                                                    ^
+/home/sabbir/sst-elements-org/Messier/Messier.cc:211:33: warning: unused parameter 'x' [clang-diagnostic-unused-parameter]
+bool Messier::tick(SST::Cycle_t x)
+                                ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:118:34: warning: unused parameter 'event' [clang-diagnostic-unused-parameter]
+                                void handleEvent(SST::Event* event) {};
+                                                             ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:129:31: warning: unused parameter 'prog_binary' [clang-diagnostic-unused-parameter]
+                                int create_pinchild(char* prog_binary, char** arg_list){return 0;}
+                                                          ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:129:51: warning: unused parameter 'arg_list' [clang-diagnostic-unused-parameter]
+                                int create_pinchild(char* prog_binary, char** arg_list){return 0;}
+                                                                              ^
+/home/sabbir/sst-elements-org/Messier/NVM_Params.h:157:8: warning: definition of implicit copy constructor for 'NVM_PARAMS' is deprecated because it has a user-declared copy assignment operator [clang-diagnostic-deprecated-copy]
+                void operator = (const NVM_PARAMS &D ) {
+                     ^
+/home/sabbir/sst-elements-org/Messier/Messier.cc:175:42: note: in implicit copy constructor for 'SST::MessierComponent::NVM_PARAMS' first required here
+        DIMM = loadComponentExtension<NVM_DIMM>(*nvm_params);
+                                                ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:118:34: warning: unused parameter 'event' [clang-diagnostic-unused-parameter]
+                                void handleEvent(SST::Event* event) {};
+                                                             ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:129:31: warning: unused parameter 'prog_binary' [clang-diagnostic-unused-parameter]
+                                int create_pinchild(char* prog_binary, char** arg_list){return 0;}
+                                                          ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:129:51: warning: unused parameter 'arg_list' [clang-diagnostic-unused-parameter]
+                                int create_pinchild(char* prog_binary, char** arg_list){return 0;}
+                                                                              ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:344:5: warning: Value stored to 'removed' is never read [clang-analyzer-deadcode.DeadStores]
+                                removed = true;
+                                ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:344:5: note: Value stored to 'removed' is never read
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:454:292: warning: comparison of integers of different signs: 'std::__cxx11::list::size_type' (aka 'unsigned long') and 'int' [clang-diagnostic-sign-compare]
+                if ((!params->adaptive_writes || group_locked!=(WhichBank(temp->Address)/params->group_size)) &&  (HOLD.find(temp->req_ID)==HOLD.end()) && temp->Read && (corresp_rank->getBusyUntil() < cycles) && (corresp_bank->getBusyUntil() < cycles) && !corresp_bank->getLocked() && (outstanding.size() < params->max_outstanding))
+                                                                                                                                                                                                                                                                                                                 ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:575:444: warning: comparison of integers of different signs: 'std::__cxx11::list::size_type' (aka 'unsigned long') and 'int' [clang-diagnostic-sign-compare]
+                                        if ((!params->adaptive_writes || group_locked!=(WhichBank(temp->Address)/params->group_size)) && (HOLD.find(temp->req_ID)==HOLD.end()) &&   (corresp_rank->getBusyUntil() < cycles) && (((corresp_bank->getBusyUntil() < cycles) && !corresp_bank->getLocked()) || (params->write_cancel && !WB->flush() && !corresp_bank->read() &&(corresp_bank->getBusyUntil() - cycles < (100-4*WB->getSize())*1.0*params->tCL_W/100.0 ))) && (outstanding.size() < params->max_outstanding))
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:675:21: warning: Forming reference to null pointer [clang-analyzer-core.NonNullParamChecker]
+        MessierEvent tmp = *temp_ptr;
+                           ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:670:2: note: 'temp_ptr' initialized here
+        MessierEvent * temp_ptr =  dynamic_cast<MessierComponent::MessierEvent*> (e);
+        ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:672:5: note: Assuming 'temp_ptr' is equal to NULL
+        if(temp_ptr==NULL)
+           ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:672:2: note: Taking true branch
+        if(temp_ptr==NULL)
+        ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:675:21: note: Forming reference to null pointer
+        MessierEvent tmp = *temp_ptr;
+                           ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:1001:1: warning: Potential leak of memory pointed to by 'tmp' [clang-analyzer-cplusplus.NewDeleteLeaks]
+}
+^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:926:22: note: Memory is allocated
+        NVM_Request * tmp = new NVM_Request();
+                            ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:930:5: note: Assuming the condition is false
+        if(!event->getIsWrite())
+           ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:930:2: note: Taking false branch
+        if(!event->getIsWrite())
+        ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:955:5: note: Assuming field 'cache' is equal to NULL
+        if(cache!=NULL)
+           ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:955:2: note: Taking false branch
+        if(cache!=NULL)
+        ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:999:7: note: Assuming field 'cache_persistent' is true
+        if(!(params->cache_persistent && (cache!=NULL) && (!tmp->Read)))
+             ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:999:7: note: Left side of '&&' is true
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:999:36: note: Assuming field 'cache' is not equal to NULL
+        if(!(params->cache_persistent && (cache!=NULL) && (!tmp->Read)))
+                                          ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:999:7: note: Left side of '&&' is true
+        if(!(params->cache_persistent && (cache!=NULL) && (!tmp->Read)))
+             ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:999:2: note: Taking false branch
+        if(!(params->cache_persistent && (cache!=NULL) && (!tmp->Read)))
+        ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:1001:1: note: Potential leak of memory pointed to by 'tmp'
+}
+^
+/home/sabbir/sst-elements-org/Messier/Messier.h:118:34: warning: unused parameter 'event' [clang-diagnostic-unused-parameter]
+                                void handleEvent(SST::Event* event) {};
+                                                             ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:129:31: warning: unused parameter 'prog_binary' [clang-diagnostic-unused-parameter]
+                                int create_pinchild(char* prog_binary, char** arg_list){return 0;}
+                                                          ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:129:51: warning: unused parameter 'arg_list' [clang-diagnostic-unused-parameter]
+                                int create_pinchild(char* prog_binary, char** arg_list){return 0;}
+                                                                              ^
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.h:129:8: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+                void finish(){}
+                     ^
+                              override
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.h:129:16: note: FIX-IT applied suggested code changes
+                void finish(){}
+                             ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:116:10: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+                                void setup()  { };
+                                     ^
+                                             override
+/home/sabbir/sst-elements-org/Messier/Messier.h:116:17: note: FIX-IT applied suggested code changes
+                                void setup()  { };
+                                            ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:117:10: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+                                void finish() {DIMM->finish();};
+                                     ^
+                                              override
+/home/sabbir/sst-elements-org/Messier/Messier.h:117:18: note: FIX-IT applied suggested code changes
+                                void finish() {DIMM->finish();};
+                                             ^
+/home/sabbir/sst-elements-org/Messier/Messier_Event.h:66:9: warning: annotate this function with 'override' or (rarely) 'final' [modernize-use-override]
+                        void serialize_order(SST::Core::Serialization::serializer &ser) {
+                             ^
+                                                                                        override
+/home/sabbir/sst-elements-org/Messier/Messier_Event.h:66:67: note: FIX-IT applied suggested code changes
+                        void serialize_order(SST::Core::Serialization::serializer &ser) {
+                                                                                       ^

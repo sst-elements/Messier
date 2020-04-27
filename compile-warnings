@@ -1,0 +1,41 @@
+In file included from /home/sabbir/sst-elements-org/Messier/libMessier.cpp:15:
+/home/sabbir/sst-elements-org/Messier/Messier.h:159:32: warning: unused parameter 'event' [-Wunused-parameter]
+  void handleEvent(SST::Event *event){};
+                               ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:169:29: warning: unused parameter 'prog_binary' [-Wunused-parameter]
+  int create_pinchild(char *prog_binary, char **arg_list) { return 0; }
+                            ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:169:49: warning: unused parameter 'arg_list' [-Wunused-parameter]
+  int create_pinchild(char *prog_binary, char **arg_list) { return 0; }
+                                                ^
+3 warnings generated.
+In file included from /home/sabbir/sst-elements-org/Messier/Messier.cc:18:
+/home/sabbir/sst-elements-org/Messier/Messier.h:159:32: warning: unused parameter 'event' [-Wunused-parameter]
+  void handleEvent(SST::Event *event){};
+                               ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:169:29: warning: unused parameter 'prog_binary' [-Wunused-parameter]
+  int create_pinchild(char *prog_binary, char **arg_list) { return 0; }
+                            ^
+/home/sabbir/sst-elements-org/Messier/Messier.h:169:49: warning: unused parameter 'arg_list' [-Wunused-parameter]
+  int create_pinchild(char *prog_binary, char **arg_list) { return 0; }
+                                                ^
+In file included from /home/sabbir/sst-elements-org/Messier/Messier.cc:18:
+In file included from /home/sabbir/sst-elements-org/Messier/Messier.h:36:
+In file included from /home/sabbir/sst-elements-org/Messier/NVM_DIMM.h:22:
+/home/sabbir/sst-elements-org/Messier/NVM_Params.h:164:8: warning: definition of implicit copy constructor for 'NVM_PARAMS' is deprecated because it has a user-declared copy assignment operator [-Wdeprecated-copy]
+  void operator=(const NVM_PARAMS &D) {
+       ^
+/home/sabbir/sst-elements-org/Messier/Messier.cc:172:43: note: in implicit copy constructor for 'SST::MessierComponent::NVM_PARAMS' first required here
+  DIMM = loadComponentExtension<NVM_DIMM>(*nvm_params);
+                                          ^
+/home/sabbir/sst-elements-org/Messier/Messier.cc:203:33: warning: unused parameter 'x' [-Wunused-parameter]
+bool Messier::tick(SST::Cycle_t x) {
+                                ^
+5 warnings generated.
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:384:29: warning: comparison of integers of different signs: 'std::__cxx11::list::size_type' (aka 'unsigned long') and 'int' [-Wsign-compare]
+        (outstanding.size() < params->max_outstanding)) {
+         ~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/sabbir/sst-elements-org/Messier/NVM_DIMM.cc:499:35: warning: comparison of integers of different signs: 'std::__cxx11::list::size_type' (aka 'unsigned long') and 'int' [-Wsign-compare]
+              (outstanding.size() < params->max_outstanding)) {
+               ~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings generated.

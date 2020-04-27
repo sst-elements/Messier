@@ -1,8 +1,8 @@
-// Copyright 2009-2019 NTESS. Under the terms
+// Copyright 2009-2020 NTESS. Under the terms
 // of Contract DE-NA0003525 with NTESS, the U.S.
 // Government retains certain rights in this software.
 //
-// Copyright (c) 2009-2019, NTESS
+// Copyright (c) 2009-2020, NTESS
 // All rights reserved.
 //
 // This file is part of the SST software package. For license
@@ -14,7 +14,7 @@
 // Author: Amro Awad (E-mail aawad@sandia.gov)
 //
 #include <sst/core/sst_config.h>
-#include <Messier.h>
+#include "Messier.h"
 
 using namespace SST;
 using namespace SST::MessierComponent;
